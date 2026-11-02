@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PieFlag</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1><span class="logo" aria-hidden="true"></span>PieFlag</h1>
+    <p>Upload a flag to see how much of it each colour covers.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="toolbar">
+        <label class="btn primary">Upload flag<input type="file" id="file" accept="image/*" hidden /></label>
+        <label class="slider">Colours <input type="range" id="colours" min="2" max="12" value="4" /> <output id="coloursOut">4</output></label>
+        <button type="button" id="save" class="btn" disabled>Save PNG</button>
+      </div>
+      <div id="drop" class="drop">
+        <p id="hint">Drop a flag image here</p>
+        <canvas id="preview" hidden></canvas>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Colour share</h2>
+      <p id="summary" class="muted">No flag loaded yet.</p>
+      <svg id="pie" viewBox="-1.02 -1.02 2.04 2.04" hidden></svg>
+      <ul id="legend"></ul>
+      <button type="button" id="saveChart" class="btn" disabled>Save chart PNG</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
